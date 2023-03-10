@@ -16,7 +16,7 @@ _get_arch() {
 	arch="$(uname -m)"
 	case $arch in
 	"x86_64") arch="amd64" ;;
-	"Darwin arm64") arch="arm64" ;;
+	"arm64") arch="arm64" ;;
 	"x86_64") arch="amd64" ;;
 	"aarch64") arch="aarch64" ;;
 	*) arch="other" ;;
@@ -50,7 +50,7 @@ _get_download_url() {
 	local -r platform="$2"
 	local -r arch="$3"
 
-	echo "https://mirror.openshift.com/pub/openshift-v4/${arch}/clients/ocp/${version}/openshift-install-${platform}.tar.gz"
+	echo "https://mirror.openshift.com/pub/openshift-v4/${arch}/clients/ocp/${version}/openshift-client-${platform}.tar.gz"
 }
 
 
